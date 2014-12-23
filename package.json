@@ -1,0 +1,52 @@
+{
+  "name": "sandblaster",
+  "version": "0.0.1",
+  "description": "A client-side JavaScript library to detect if your code is running inside of a sandboxed iframe... and, if desired, might just be able to change that fact!",
+  "keywords": [
+    "iframe",
+    "sandbox",
+    "security",
+    "csp",
+    "cross-origin",
+    "cross-domain",
+    "xss",
+    "html5"
+  ],
+  "homepage": "http://jamesmgreene.github.io/sandblaster/",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/JamesMGreene/sandblaster/blob/master/LICENSE-MIT"
+    }
+  ],
+  "author": {
+    "name": "James M. Greene",
+    "email": "james.m.greene@gmail.com",
+    "url": "http://greene.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesMGreene/sandblaster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JamesMGreene/sandblaster/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.6.0"
+  },
+  "main": "dist/sandblaster.js",
+  "files": [
+    "dist/*",
+    "package.json",
+    "LICENSE-MIT"
+  ],
+  "scripts": {
+    "test": "grunt travis --verbose"
+  }
+}
