@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <title>Sandblaster.js IFrame Detection Tests for localhost</title>
+  <script>
+  // Forcibly redirect as needed
+  var expectedUrl = "http://localhost:3000/test-iframes-local.html";
+  if (window.location.href !== expectedUrl) {
+    window.location = expectedUrl;
+  }
+  </script>
+  <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all" />
+  <link href="stylesheets/test-iframes.css" type="text/css" rel="stylesheet" media="all" />
+</head>
+<body>
+
+<h1>IFrame Security Analysis for <code>localhost</code></h1>
+<h2>Should be served locally via <code>make server</code> and viewed from <a href="http://localhost:3000/test-iframes-local.html">localhost:3000/test-iframes-local.html</a></h2>
+
+<div class="scrollable-table">
+<table id="iframe-security-analysis-results" class="table table-header-rotated">
+  <thead>
+    <tr>
+      <!-- First column header is not rotated -->
+      <th></th>
+      <!-- Following headers are rotated -->
+      <th class="rotate-45"><div><span>Framed</span></div></th>
+      <th class="rotate-45"><div><span>Cross Origin</span></div></th>
+      <th class="rotate-45"><div><span>Sandboxed</span></div></th>
+      <th class="rotate-45"><div><span><code>allow-forms</code></span></div></th>
+      <th class="rotate-45"><div><span><code>allow-pointer-lock</code></span></div></th>
+      <th class="rotate-45"><div><span><code>allow-popups</code></span></div></th>
+      <th class="rotate-45"><div><span><code>allow-same-origin</code></span></div></th>
+      <th class="rotate-45"><div><span><code>allow-scripts</code></span></div></th>
+      <th class="rotate-45"><div><span><code>allow-top-navigation</code></span></div></th>
+      <th class="rotate-45"><div><span>Unsandboxable</span></div></th>
+      <th class="rotate-45"><div><span>Resandboxable</span></div></th>
+      <th class="rotate-45"><div><span>Sandboxable</span></div></th>
+      <th class="rotate-45"><div><span>Errors</span></div></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr id="results-no-frame">
+      <th data-type="scenarioName" class="row-header">No Frame</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-same-origin-no-sandbox">
+      <th data-type="scenarioName" class="row-header">Same Origin, No Sandbox</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-same-origin-sandbox-maximum-plus-allow-scripts">
+      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ Maximum, plus <code>allow-scripts</code></th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-same-origin-sandbox-jsfiddle-level">
+      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ JSFiddle Level</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-same-origin-sandbox-codepen-level">
+      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ CodePen Level</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-same-origin-sandbox-minimum-minus-allow-same-origin">
+      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ Minimum, minus <code>allow-same-origin</code></th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-same-origin-sandbox-minimum">
+      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ Minimum</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-cross-origin-no-sandbox">
+      <th data-type="scenarioName" class="row-header">Cross Origin, No Sandbox</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-cross-origin-sandbox-maximum-plus-allow-scripts">
+      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ Maximum, plus <code>allow-scripts</code></th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-cross-origin-sandbox-jsfiddle-level">
+      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ JSFiddle Level</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-cross-origin-sandbox-codepen-level">
+      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ CodePen Level</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-cross-origin-sandbox-minimum-minus-allow-same-origin">
+      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ Minimum, minus <code>allow-same-origin</code></th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+    <tr id="results-cross-origin-sandbox-minimum">
+      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ Minimum</th>
+      <td data-type="framed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="crossOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxed">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowForms">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPointerLock">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowPopups">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowSameOrigin">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowScripts">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="allowTopNavigation">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="unsandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="resandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="sandboxable">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+      <td data-type="errors">
+        <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+<div id="iframe-test-container">
+
+  <iframe
+    name="same-origin-no-sandbox"
+    src="test-iframes-contents.html"
+    seamless></iframe>
+
+  <iframe
+    name="same-origin-sandbox-maximum-plus-allow-scripts"
+    sandbox="allow-scripts"
+    src="test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="same-origin-sandbox-jsfiddle-level"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+    src="test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="same-origin-sandbox-codepen-level"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups"
+    src="test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="same-origin-sandbox-minimum-minus-allow-same-origin"
+    sandbox="allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    src="test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="same-origin-sandbox-minimum"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    src="test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="cross-origin-no-sandbox"
+    src="http://0.0.0.0:3000/test-iframes-contents.html"
+    seamless></iframe>
+
+  <iframe
+    name="cross-origin-sandbox-maximum-plus-allow-scripts"
+    sandbox="allow-scripts"
+    src="http://0.0.0.0:3000/test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="cross-origin-sandbox-jsfiddle-level"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+    src="http://0.0.0.0:3000/test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="cross-origin-sandbox-codepen-level"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups"
+    src="http://0.0.0.0:3000/test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="cross-origin-sandbox-minimum-minus-allow-same-origin"
+    sandbox="allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    src="http://0.0.0.0:3000/test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+  <iframe
+    name="cross-origin-sandbox-minimum"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    src="http://0.0.0.0:3000/test-iframes-contents.html"
+    seamless>
+  </iframe>
+
+</div>
+
+<script src="javascripts/vendor/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="javascripts/sandblaster.js"></script>
+<script src="javascripts/test-iframes.js"></script>
+<script>
+
+// Listen for the various iframes to send their results
+window.addEventListener("message", function(e) {
+  // Bail if event structure is unexpected or if received from an unauthorized origin
+  if (
+      e != null &&
+      typeof e.data !== "string" &&
+      e.source &&
+      e.origin != null &&
+      e.origin !== "null" &&
+      e.origin !== "http://localhost:3000" &&
+      e.origin !== "http://0.0.0.0:3000"
+  ) {
+    return;
+  }
+
+  // Just always use JSON.stringify/JSON.parse to support IE9... our data isn't that big, anyway
+  var result = JSON.parse(e.data);
+
+  // Confirm a basic check of the data structure
+  if (result && typeof result.name === "string" && result.name && typeof result.results === "object" && result.results) {
+    var iframe = document.querySelector('#iframe-test-container > iframe[name="' + result.name + '"]');
+    var resultRow = document.querySelector("#iframe-security-analysis-results tr#results-" + result.name);
+    if (iframe && resultRow && e.source == iframe.contentWindow) {
+      renderResults(resultRow, result.results);
+    }
+  }
+});
+
+// Run the "No Frame" scenario on this page
+window.addEventListener("load", function() {
+  var noFrameResultRow = document.querySelector("#iframe-security-analysis-results tr#results-no-frame");
+  if (noFrameResultRow) {
+    var results = sandblaster.detect();
+    renderResults(noFrameResultRow, results);
+  }
+});
+
+</script>
+</body>
+</html>

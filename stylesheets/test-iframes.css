@@ -1,0 +1,158 @@
+body {
+  padding: 1%;
+}
+
+.scrollable-table {
+  width: 98%;
+}
+
+.table-header-rotated {
+  /*
+    Override Bootstrap's defaults to let all columns be seen
+    if they can all fit on the screen.
+  */
+  margin-right: 120px;
+  max-width: calc(100% - 120px);
+  width: auto;  /* Remove this if you want the table to span the whole page regardless of how little content it contains */
+}
+
+.table-header-rotated th.row-header {
+  width: auto;
+  border: 1px solid #DDDDDD;
+  padding-right: 12px;  /* Because it looks good */
+  padding-left: 20px;   /* Because it looks good */
+  text-align: right;
+}
+
+.table-header-rotated td {
+  width: 40px;
+  border: 1px solid #DDDDDD;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-header-rotated th.rotate-45 {
+  height: 120px;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  position: relative;
+  vertical-align: bottom;
+  padding: 0;
+  font-size: 12px;
+  line-height: 0.8;
+}
+
+.table-header-rotated th.rotate-45 > div {
+  position: relative;
+  top: 0px;
+  left: 60px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*/
+  height: 100%;
+  -ms-transform: skew(-45deg, 0deg);
+  -moz-transform: skew(-45deg, 0deg);
+  -webkit-transform: skew(-45deg, 0deg);
+  -o-transform: skew(-45deg, 0deg);
+  transform: skew(-45deg, 0deg);
+  overflow: hidden;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+}
+
+.table-header-rotated th.rotate-45 span {
+  -ms-transform: skew(45deg, 0deg) rotate(315deg);
+  -moz-transform: skew(45deg, 0deg) rotate(315deg);
+  -webkit-transform: skew(45deg, 0deg) rotate(315deg);
+  -o-transform: skew(45deg, 0deg) rotate(315deg);
+  transform: skew(45deg, 0deg) rotate(315deg);
+  position: absolute;
+  bottom: 53px; /* ??? -> 40 cos(45) = 28 with an additional 2px margin*/
+  left: -53px; /* ??? -> Because it looked good, but there is probably a mathematical link here as well*/
+  display: inline-block;
+  width: 142px; /* 80 / cos(45) - 40 cos (45) = 85 where 80 is the height of the cell, 40 the width of the cell and 45 the transform angle*/
+  text-align: left;
+}
+
+.popover {
+  max-width: 500px;
+  max-height: 400px;
+}
+
+.popover > .popover-content > pre {
+  max-height: 300px;
+  overflow: auto;
+}
+
+#iframe-test-container iframe[seamless] {
+  border: 0px none transparent;
+  margin: 0px;
+  padding: 0px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+code {
+  /* Override Bootstrap's weird pinkish-gray default background color */
+  background-color: #D3D3D3;  /* LightGray */
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+.diff-good, ins {
+  background-color: #EAFFEA;  /* GitHub diff added (light green) */
+}
+
+.diff-bad, del {
+  background-color: #FFECEC;  /* GitHub diff removed (light red) */
+}
+
+.diff-uncertain, em.uncertain {
+  background-color: #FFFFE0;  /* LightYellow */
+}
+
+.diff-invalid {
+  background-color: #D3D3D3;  /* LightGray */
+}
+
+.diff-impossible {
+  background-color: #8B0000;  /* DarkRed */
+  color: #FFA500;             /* Orange; #FF8C00 = DarkOrange */
+}
+
+.diff-bad a {
+  text-decoration: underline;
+}
+
+pre {
+  margin: 0.5em 0px;
+}
+
+.slow-spin {
+  opacity: 0.75;
+
+  -ms-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  -webkit-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+
+@-ms-keyframes spin {
+  100% { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+  100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
