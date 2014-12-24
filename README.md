@@ -22,11 +22,11 @@ It is also very important to note, however, that the `sandbox` attribute takes a
 
 
 
-## Usage
+## Getting Started
 
 ### Install
 
-Sandblaster is published to NPM for ease of installation:
+Sandblaster.js is published to NPM for ease of installation:
 
 ```shell
 npm install sandblaster
@@ -34,6 +34,18 @@ npm install sandblaster
 
 Please keep in mind, however, that it _only_ works in browser contexts, not in Node.js.
 
+
+### Load
+
+Then, load up the "sandblaster.js" script on your HTML page:
+
+```html
+<script src="node_modules/sandblaster/dist/sandblaster.min.js"></script>
+```
+
+
+
+## Usage
 
 ### Analysis
 
