@@ -382,22 +382,22 @@ SandBlaster.prototype.detect = function sandblaster$detect() {
           }
         }
       }
+
+      // Finally, do some analysis to see if we can authoritatively add sandboxing (e.g. if not sandboxed already)
+      results.sandboxable = (
+        results.resandboxable ||
+        (
+          results.framed === true &&
+          results.crossOrigin === false &&
+          (results.sandboxed === false || results.sandboxAllowances.sameOrigin)
+        ) ||
+        false
+      );
     }
   }
   catch (err) {
     errback(err);
   }
-
-  // Finally, do some analysis to see if we can authoritatively add sandboxing (e.g. if not sandboxed already)
-  results.sandboxable = (
-    results.resandboxable ||
-    (
-      results.framed === true &&
-      results.crossOrigin === false &&
-      (results.sandboxed === false || results.sandboxAllowances.sameOrigin)
-    ) ||
-    false
-  );
 
   return results;
 };

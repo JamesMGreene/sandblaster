@@ -123,9 +123,9 @@ result = {
     scripts: true|false|null,
     topNavigation: true|false|null
   },
-  unsandboxable: true|false|null,
-  resandboxable: true|false|null,
-  sandboxable: true|false|null,
+  unsandboxable: true|false|undefined,
+  resandboxable: true|false|undefined,
+  sandboxable: true|false|undefined,
   errors: [
     // Any Errors that occurred during all of the various security probing. Just because there
     // were Errors does NOT mean that something actually went wrong unexpectedly.
