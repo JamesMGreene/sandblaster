@@ -1,6 +1,6 @@
 {
   "name": "sandblaster",
-  "version": "1.0.1",
+  "version": "1.0.2-pre",
   "description": "A client-side JavaScript library to detect if your code is running inside of a sandboxed iframe... and, if desired, might just be able to change that fact!",
   "keywords": [
     "iframe",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0"
+    "grunt-contrib-uglify": "^0.7.0"
   },
   "main": "dist/sandblaster.js",
   "files": [
