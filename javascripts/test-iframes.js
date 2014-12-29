@@ -70,13 +70,13 @@ function _getResponseClass(value) {
 
 var RESPONSE_HTML = {
   // Not Applicable" ("N/A") / Invalid
-  "": '&mdash;',
+  "": '<span title="Not Applicable">&mdash;</span>',
   // "Yes" / Good
-  "true": 'Y',
+  "true": '<span title="Yes">Y</span>',
   // "No" / Bad
-  "false": 'N',
+  "false": '<span title="No">N</span>',
   // "Maybe?" / Uncertain
-  "null": '?',
+  "null": '<span title="Maybe?">?</span>',
   // "Impossible result" / Impossible
   "IMPOSSIBLE": '<span class="glyphicon glyphicon-fire" title="Impossible result" aria-label="Impossible result"></span>'
 };
@@ -163,7 +163,7 @@ window.renderResults = function(outputEl, results) {
     throw new Error('Could not find expected descendant for `tr#' + outputEl.id + '`: `td[data-type="' + prop + '"]`');
   }
   if (results.framed === true && results.crossOrigin === true && results.sandboxed === true && results.sandboxAllowances.sameOrigin === false) {
-    cell.innerHTML += '<span title="(via sandboxing, at least)" aria-label="(via sandboxing, at least)">*</span>';
+    cell.innerHTML = '<span title="Yes (via sandboxing, at least)">Y*</span>';
   }
 
   // `errors` has a slightly more complicated rendering logic
