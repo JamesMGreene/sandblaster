@@ -96,6 +96,25 @@ var succeeded = sandblaster.sandbox({
 If the `window` is already in a `sandbox`ed `iframe`, any non-Boolean values in the allowances object will defer to their current value in the DOM.
 
 
+#### Resetting: Reloading the `iframe`
+
+If it is possible for your `window` state, you can also attempt to reload the `iframe` with its current attributes:
+
+```js
+var succeeded = sandblaster.reload();  // {true|false}
+```
+
+This is useful for those who want to make native plugins work after removing sandboxing (e.g. on JSFiddle, CodePen, etc.):
+
+```js
+var result = sandblaster.detect();
+if (result.sandboxed && sandblaster.unsandbox()) {
+  sandblaster.reload();
+}
+```
+
+**NOTE:** If this function succeeds, your following code may never get a chance to execute as the framed page will begin reloading.
+
 
 ## The Anaylsis Result
 

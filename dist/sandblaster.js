@@ -14,6 +14,7 @@
  *   Utility code   *
  *                  *
  ********************/
+  var _slice = Array.prototype.slice;
   function _cloneError(err) {
     // Some browsers and/or Error types do not need to clone correctly via
     // JSON serialization, so we may need to manually update the copy instead.
@@ -400,6 +401,37 @@
               result = isLockingDown;
             }
           }
+        }
+      }
+    }
+    return result;
+  };
+  /**
+ * ???
+ */
+  SandBlaster.prototype.reload = function sandblaster$unsandboxAndReload() {
+    var frameEl, attrs, newFrameEl, replacedFrameEl, result = false, sb = this, _init = sb._initialState;
+    // If the page was never framed or was cross-origin, bail out early because it will never change
+    if (_init.framed && _init.crossOrigin === false) {
+      frameEl = _getFrame();
+      if (frameEl) {
+        try {
+          if (frameEl.parentNode && frameEl.parentNode.ownerDocument) {
+            attrs = _slice.call(frameEl.attributes).map(function(item) {
+              return {
+                name: item.name,
+                value: item.value
+              };
+            });
+            newFrameEl = frameEl.parentNode.ownerDocument.createElement("iframe");
+            attrs.forEach(function(item) {
+              newFrameEl.setAttribute(item.name, item.value);
+            });
+            replacedFrameEl = frameEl.parentNode.replaceChild(newFrameEl, frameEl);
+            result = frameEl === replacedFrameEl;
+          }
+        } catch (err) {
+          result = false;
         }
       }
     }
