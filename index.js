@@ -96,8 +96,10 @@ function _getEffectiveScriptOrigin(errback) {
 function _defaultAllowancesMapForNullAllowances() {
   return {
     forms: null,
+    modals: null,
     pointerLock: null,
     popups: null,
+    popupsToEscapeSandbox: null,
     sameOrigin: true,
     scripts: true,
     topNavigation: null
@@ -120,8 +122,10 @@ function _createAllowancesMap(allowancesString) {
 
     allowancesMap = {
       forms: allowanceList.indexOf("allow-forms") !== -1,
+      modals: allowanceList.indexOf("allow-modals") !== -1,
       pointerLock: allowanceList.indexOf("allow-pointer-lock") !== -1,
       popups: allowanceList.indexOf("allow-popups") !== -1,
+      popupsToEscapeSandbox: allowanceList.indexOf("allow-popups-to-escape-sandbox") !== -1,
       sameOrigin: allowanceList.indexOf("allow-same-origin") !== -1,
       scripts: allowanceList.indexOf("allow-scripts") !== -1,
       topNavigation: allowanceList.indexOf("allow-top-navigation") !== -1
@@ -358,8 +362,10 @@ SandBlaster.prototype.detect = function sandblaster$detect() {
         results.sandboxed = null;
         results.sandboxAllowances = {
           forms: null,
+          modals: null,
           pointerLock: null,
           popups: null,
+          popupsToEscapeSandbox: null,
           sameOrigin: null,
           scripts: true,
           topNavigation: null
