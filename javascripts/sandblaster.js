@@ -1,10 +1,10 @@
 /*!
 * sandblaster
 * A client-side JavaScript library to detect if your code is running inside of a sandboxed iframe... and, if desired, might just be able to change that fact!
-* Copyright (c) 2014 James M. Greene
+* Copyright (c) 2014-2015 James M. Greene
 * Licensed MIT
 * http://jamesmgreene.github.io/sandblaster/
-* v1.0.2
+* v1.1.0
 */
 
 (function(window, undefined) {
@@ -79,8 +79,10 @@
   function _defaultAllowancesMapForNullAllowances() {
     return {
       forms: null,
+      modals: null,
       pointerLock: null,
       popups: null,
+      popupsToEscapeSandbox: null,
       sameOrigin: true,
       scripts: true,
       topNavigation: null
@@ -94,8 +96,10 @@
       allowanceList = allowancesString.replace(/^\s+|\s+$/g, "").toLowerCase().split(/\s+/);
       allowancesMap = {
         forms: allowanceList.indexOf("allow-forms") !== -1,
+        modals: allowanceList.indexOf("allow-modals") !== -1,
         pointerLock: allowanceList.indexOf("allow-pointer-lock") !== -1,
         popups: allowanceList.indexOf("allow-popups") !== -1,
+        popupsToEscapeSandbox: allowanceList.indexOf("allow-popups-to-escape-sandbox") !== -1,
         sameOrigin: allowanceList.indexOf("allow-same-origin") !== -1,
         scripts: allowanceList.indexOf("allow-scripts") !== -1,
         topNavigation: allowanceList.indexOf("allow-top-navigation") !== -1
@@ -281,8 +285,10 @@
           results.sandboxed = null;
           results.sandboxAllowances = {
             forms: null,
+            modals: null,
             pointerLock: null,
             popups: null,
+            popupsToEscapeSandbox: null,
             sameOrigin: null,
             scripts: true,
             topNavigation: null
