@@ -1,5 +1,5 @@
 # sandblaster.js
-[![GitHub Latest Release](https://badge.fury.io/gh/JamesMGreene%2Fsandblaster.png)](https://github.com/JamesMGreene/sandblaster) [![Build Status](https://secure.travis-ci.org/JamesMGreene/sandblaster.png?branch=master)](https://travis-ci.org/JamesMGreene/sandblaster) [![Dependency Status](https://david-dm.org/JamesMGreene/sandblaster.png?theme=shields.io)](https://david-dm.org/JamesMGreene/sandblaster) [![Dev Dependency Status](https://david-dm.org/JamesMGreene/sandblaster/dev-status.png?theme=shields.io)](https://david-dm.org/JamesMGreene/sandblaster#info=devDependencies)
+[![GitHub Latest Release](https://badge.fury.io/gh/JamesMGreene%2Fsandblaster.svg)](https://github.com/JamesMGreene/sandblaster) [![Build Status](https://secure.travis-ci.org/JamesMGreene/sandblaster.svg?branch=master)](https://travis-ci.org/JamesMGreene/sandblaster) [![Dependency Status](https://david-dm.org/JamesMGreene/sandblaster.svg?theme=shields.io)](https://david-dm.org/JamesMGreene/sandblaster) [![Dev Dependency Status](https://david-dm.org/JamesMGreene/sandblaster/dev-status.svg?theme=shields.io)](https://david-dm.org/JamesMGreene/sandblaster#info=devDependencies)
 
 A client-side JavaScript library to detect if your code is running inside of a `sandbox`ed `iframe`... and, if desired, might just be able to change that fact!
 
