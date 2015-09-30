@@ -242,7 +242,7 @@
     </tr>
 
     <tr id="results-same-origin-sandbox-codepen-level">
-      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ CodePen Level</th>
+      <th data-type="scenarioName" class="row-header">Same Origin, Sandbox @ CodePen/JSBin Level</th>
       <td data-type="framed">
         <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
       </td>
@@ -536,7 +536,7 @@
     </tr>
 
     <tr id="results-cross-origin-sandbox-codepen-level">
-      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ CodePen Level</th>
+      <th data-type="scenarioName" class="row-header">Cross Origin, Sandbox @ CodePen/JSBin Level</th>
       <td data-type="framed">
         <span title="Analyzing..." class="glyphicon glyphicon-refresh slow-spin"></span>
       </td>
@@ -715,14 +715,14 @@
 
   <iframe
     name="same-origin-sandbox-minimum-minus-allow-same-origin"
-    sandbox="allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
     src="test-iframes-contents.html"
     seamless>
   </iframe>
 
   <iframe
     name="same-origin-sandbox-minimum"
-    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
     src="test-iframes-contents.html"
     seamless>
   </iframe>
@@ -755,14 +755,14 @@
 
   <iframe
     name="cross-origin-sandbox-minimum-minus-allow-same-origin"
-    sandbox="allow-scripts allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
     src="http://rawgit.com/JamesMGreene/sandblaster/gh-pages/test-iframes-contents.html"
     seamless>
   </iframe>
 
   <iframe
     name="cross-origin-sandbox-minimum"
-    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups allow-top-navigation"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
     src="http://rawgit.com/JamesMGreene/sandblaster/gh-pages/test-iframes-contents.html"
     seamless>
   </iframe>
