@@ -4,5 +4,8 @@ node_js:
 branches:
   except:
     - gh-pages
-before_script:
+before_install:
+  - npm update -g npm
   - npm install -g grunt-cli
+
+sudo: false
