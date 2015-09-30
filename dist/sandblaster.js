@@ -4,7 +4,7 @@
 * Copyright (c) 2014-2015 James M. Greene
 * Licensed MIT
 * http://jamesmgreene.github.io/sandblaster/
-* v1.1.0
+* v1.1.1
 */
 
 (function(window, undefined) {

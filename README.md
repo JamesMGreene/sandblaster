@@ -136,8 +136,10 @@ result = {
   sandboxed: true|false|null|undefined,
   sandboxAllowances: undefined|{
     forms: true|false|null,
+    modals: true|false|null,
     pointerLock: true|false|null,
     popups: true|false|null,
+    popupsToEscapeSandbox: true|false|null,
     sameOrigin: true|false|null,
     scripts: true|false|null,
     topNavigation: true|false|null
