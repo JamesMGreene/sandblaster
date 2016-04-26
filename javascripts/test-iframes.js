@@ -121,8 +121,8 @@ window.renderResults = function(outputEl, results) {
   // Nested properties
   //
   var nestedProperties = [
-    "allowForms", "allowModals", "allowPointerLock",
-    "allowPopups", "allowPopupsToEscapeSandbox",
+    "allowForms", "allowModals", "allowOrientationLock",
+    "allowPointerLock", "allowPopups", "allowPopupsToEscapeSandbox",
     "allowSameOrigin", "allowScripts", "allowTopNavigation"
   ];
 
