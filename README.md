@@ -17,6 +17,7 @@ It is also very important to note, however, that the `sandbox` attribute takes a
 
  - [HTML5 Rocks :metal: article on `sandbox`ed `iframe`s](http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/)
  - [HTML spec: `iframe` `sandbox` attribute](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-iframe-sandbox)
+ - [Screen Orientation API spec](https://w3c.github.io/screen-orientation/#extension-to-the-html-sandboxing-model) &mdash; Adds the `allow-orientation-lock` token
  - [HTML spec: Browser sandboxing](http://www.w3.org/TR/html/browsers.html#sandboxing)
  - [HTML5 Rocks :metal: article on Content Security Policy (CSP)](http://www.html5rocks.com/en/tutorials/security/content-security-policy/)
 
@@ -137,6 +138,7 @@ result = {
   sandboxAllowances: undefined|{
     forms: true|false|null,
     modals: true|false|null,
+    orientationLock: true|false|null,
     pointerLock: true|false|null,
     popups: true|false|null,
     popupsToEscapeSandbox: true|false|null,

@@ -97,6 +97,7 @@ function _defaultAllowancesMapForNullAllowances() {
   return {
     forms: null,
     modals: null,
+    orientationLock: null,
     pointerLock: null,
     popups: null,
     popupsToEscapeSandbox: null,
@@ -123,6 +124,7 @@ function _createAllowancesMap(allowancesString) {
     allowancesMap = {
       forms: allowanceList.indexOf("allow-forms") !== -1,
       modals: allowanceList.indexOf("allow-modals") !== -1,
+      orientationLock: allowanceList.indexOf("allow-orientation-lock") !== -1,
       pointerLock: allowanceList.indexOf("allow-pointer-lock") !== -1,
       popups: allowanceList.indexOf("allow-popups") !== -1,
       popupsToEscapeSandbox: allowanceList.indexOf("allow-popups-to-escape-sandbox") !== -1,
@@ -170,6 +172,8 @@ function _sandboxAllowancesMatch(sbAllowances1, sbAllowances2) {
  *********************/
 
 function _analyzeSandboxing(frameEl, errback) {
+  /*jshint maxstatements:45 */
+
   //
   // An interesting note from: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
   //
@@ -363,6 +367,7 @@ SandBlaster.prototype.detect = function sandblaster$detect() {
         results.sandboxAllowances = {
           forms: null,
           modals: null,
+          orientationLock: null,
           pointerLock: null,
           popups: null,
           popupsToEscapeSandbox: null,

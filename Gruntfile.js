@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       "* <%= pkg.title || pkg.name %>\n" +
       "* <%= pkg.description %>\n" +
       "* Copyright (c) 2014<%= (function(thisYear) { return thisYear !== '2014' ? '-' + thisYear : ''; })(grunt.template.today('yyyy')) %> <%= pkg.author.name %>\n" +
-      "* Licensed <%= _.pluck(pkg.licenses, 'type').join(', ') %>\n" +
+      "* Licensed <%= pkg.license %>\n" +
       "* <%= pkg.homepage %>\n" +
       "* v<%= pkg.version %>\n" +
       "*/\n\n",
@@ -31,6 +31,7 @@ module.exports = function(grunt) {
       gruntfile: ["Gruntfile.js"],
       src: ["<%= srcFile %>"]
     },
+
     uglify: {
       options: {
         banner: "<%= banner %>",
