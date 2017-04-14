@@ -117,7 +117,7 @@ if (result.sandboxed && sandblaster.unsandbox()) {
 **NOTE:** If this function succeeds, your following code may never get a chance to execute as the framed page will begin reloading.
 
 
-## The Anaylsis Result
+## The Analysis Result
 
 A live visualization of every known possible analysis result can be seen at [jamesmgreene.github.io/sandblaster/test-iframes.html](http://jamesmgreene.github.io/sandblaster/test-iframes.html).
 
