@@ -123,7 +123,8 @@ window.renderResults = function(outputEl, results) {
   var nestedProperties = [
     "allowForms", "allowModals", "allowOrientationLock",
     "allowPointerLock", "allowPopups", "allowPopupsToEscapeSandbox",
-    "allowSameOrigin", "allowScripts", "allowTopNavigation"
+    "allowPresentation", "allowSameOrigin", "allowScripts",
+    "allowTopNavigation", "allowTopNavigationByUserActivation"
   ];
 
   var originalSandboxAllowances = results.sandboxAllowances;

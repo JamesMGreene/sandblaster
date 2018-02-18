@@ -1,10 +1,10 @@
 /*!
 * sandblaster
 * A client-side JavaScript library to detect if your code is running inside of a sandboxed iframe... and, if desired, might just be able to change that fact!
-* Copyright (c) 2014-2016 James M. Greene
+* Copyright (c) 2014-2018 James M. Greene
 * Licensed MIT
 * http://jamesmgreene.github.io/sandblaster/
-* v1.2.0
+* v1.3.0
 */
 
 (function(window, undefined) {
@@ -84,9 +84,11 @@
       pointerLock: null,
       popups: null,
       popupsToEscapeSandbox: null,
+      presentation: null,
       sameOrigin: true,
       scripts: true,
-      topNavigation: null
+      topNavigation: null,
+      topNavigationByUserActivation: null
     };
   }
   function _createAllowancesMap(allowancesString) {
@@ -102,9 +104,11 @@
         pointerLock: allowanceList.indexOf("allow-pointer-lock") !== -1,
         popups: allowanceList.indexOf("allow-popups") !== -1,
         popupsToEscapeSandbox: allowanceList.indexOf("allow-popups-to-escape-sandbox") !== -1,
+        presentation: allowanceList.indexOf("allow-presentation") !== -1,
         sameOrigin: allowanceList.indexOf("allow-same-origin") !== -1,
         scripts: allowanceList.indexOf("allow-scripts") !== -1,
-        topNavigation: allowanceList.indexOf("allow-top-navigation") !== -1
+        topNavigation: allowanceList.indexOf("allow-top-navigation") !== -1,
+        topNavigationByUserActivation: allowanceList.indexOf("allow-top-navigation-by-user-activation") !== -1
       };
     }
     return allowancesMap;
@@ -293,9 +297,11 @@
             pointerLock: null,
             popups: null,
             popupsToEscapeSandbox: null,
+            presentation: null,
             sameOrigin: null,
             scripts: true,
-            topNavigation: null
+            topNavigation: null,
+            topNavigationByUserActivation: null
           };
           results.unsandboxable = false;
           results.resandboxable = false;
