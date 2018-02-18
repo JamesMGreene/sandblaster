@@ -142,9 +142,11 @@ result = {
     pointerLock: true|false|null,
     popups: true|false|null,
     popupsToEscapeSandbox: true|false|null,
+    presentation: true|false|null,
     sameOrigin: true|false|null,
     scripts: true|false|null,
-    topNavigation: true|false|null
+    topNavigation: true|false|null,
+    topNavigationByUserActivation: true|false|null
   },
   unsandboxable: true|false|undefined,
   resandboxable: true|false|undefined,

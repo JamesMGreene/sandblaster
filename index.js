@@ -101,9 +101,11 @@ function _defaultAllowancesMapForNullAllowances() {
     pointerLock: null,
     popups: null,
     popupsToEscapeSandbox: null,
+    presentation: null,
     sameOrigin: true,
     scripts: true,
-    topNavigation: null
+    topNavigation: null,
+    topNavigationByUserActivation: null
   };
 }
 
@@ -128,9 +130,11 @@ function _createAllowancesMap(allowancesString) {
       pointerLock: allowanceList.indexOf("allow-pointer-lock") !== -1,
       popups: allowanceList.indexOf("allow-popups") !== -1,
       popupsToEscapeSandbox: allowanceList.indexOf("allow-popups-to-escape-sandbox") !== -1,
+      presentation: allowanceList.indexOf("allow-presentation") !== -1,
       sameOrigin: allowanceList.indexOf("allow-same-origin") !== -1,
       scripts: allowanceList.indexOf("allow-scripts") !== -1,
-      topNavigation: allowanceList.indexOf("allow-top-navigation") !== -1
+      topNavigation: allowanceList.indexOf("allow-top-navigation") !== -1,
+      topNavigationByUserActivation: allowanceList.indexOf("allow-top-navigation-by-user-activation") !== -1
     };
   }
 
@@ -371,9 +375,11 @@ SandBlaster.prototype.detect = function sandblaster$detect() {
           pointerLock: null,
           popups: null,
           popupsToEscapeSandbox: null,
+          presentation: null,
           sameOrigin: null,
           scripts: true,
-          topNavigation: null
+          topNavigation: null,
+          topNavigationByUserActivation: null
         };
         results.unsandboxable = false;
         results.resandboxable = false;
