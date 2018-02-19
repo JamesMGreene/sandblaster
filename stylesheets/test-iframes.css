@@ -32,10 +32,8 @@ body {
 }
 
 .table-header-rotated th.rotate-45 {
-  height: 170px;
+  height: 205px;
   width: 40px;
-  min-width: 40px;
-  max-width: 40px;
   position: relative;
   vertical-align: bottom;
   padding: 0;
@@ -47,7 +45,7 @@ body {
   position: relative;
   top: 0px;
   /*left: 60px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*/
-  left: 85px;
+  left: 103px;  /* seems like being 50% the size of the th's height is good */
   height: 100%;
   -ms-transform: skew(-45deg, 0deg);
   -moz-transform: skew(-45deg, 0deg);
@@ -100,6 +98,8 @@ body {
 code {
   /* Override Bootstrap's weird pinkish-gray default background color */
   background-color: #D3D3D3;  /* LightGray */
+
+  white-space: nowrap;
 }
 
 ins {
